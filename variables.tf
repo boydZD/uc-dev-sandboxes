@@ -38,10 +38,10 @@ variable "tenant_map" {
   description = "Map of tenant names to tenant details"
   default = {
     "demo-tenant1" = {
-      catalog_admin = "irs-sa"
+      catalog_admin = "some-group"
     },
     "demo-tenant2" = {
-      catalog_admin = "irs-sa"
+      catalog_admin = "another-group"
     },
   }
 }
