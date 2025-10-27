@@ -1,13 +1,3 @@
-# variable "aws_account_id" {
-#   type        = string
-#   description = "ID of the AWS account."
-# }
-
-# variable "cmk_admin_arn" {
-#   description = "Amazon Resource Name (ARN) of the CMK admin."
-#   type        = string
-# }
-
 variable "resource_prefix" {
   description = "Prefix for the resource names."
   type        = string

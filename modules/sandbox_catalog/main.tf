@@ -1,5 +1,4 @@
 locals {
-  #uc_iam_role        = "${var.resource_prefix}-catalog-${var.workspace_id}"
   tenant_catalog_name = "${var.resource_prefix}_${replace(var.tenant_name, "-", "_")}"
   storage_root     = "${trimsuffix(var.s3_base_path, "/")}/${replace(var.tenant_name, "-", "_")}"
 }

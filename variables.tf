@@ -1,4 +1,3 @@
-#use env.sh to set this var in your shell
 variable "workspace_url" {
   nullable = false
   description = "Target Workspace URL"
@@ -34,17 +33,14 @@ variable "storage_credential_id" {
 
 variable "tenant_map" {
   type = map(object({
-    #name = string
     catalog_admin = string
   }))
   description = "Map of tenant names to tenant details"
   default = {
     "demo-tenant1" = {
-      #name = "irs-demo"
       catalog_admin = "irs-sa"
     },
     "demo-tenant2" = {
-      #name = "irs-demo"
       catalog_admin = "irs-sa"
     },
   }
