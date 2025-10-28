@@ -27,6 +27,7 @@ resource "databricks_catalog" "sandbox_catalog" {
 resource "databricks_workspace_binding" "sandbox" {
   securable_name = databricks_catalog.sandbox_catalog.name
   workspace_id   = var.workspace_id
+  #depends_on = [databricks_grant.sandbox_catalog]
 }
 
 # Grant Admin Catalog Perms
@@ -35,6 +36,7 @@ resource "databricks_grant" "sandbox_catalog" {
 
   principal  = var.catalog_admin
   privileges = ["ALL_PRIVILEGES"]
+  depends_on = [databricks_catalog.sandbox_catalog, databricks_workspace_binding.sandbox]
 }
 
 # Grant external location perms
@@ -44,4 +46,5 @@ resource "databricks_grant" "sandbox_external_location" {
 
   principal  = var.catalog_admin
   privileges = ["WRITE_FILES", "READ_FILES"]
+  depends_on = [databricks_external_location.sandbox_external_location]
 }
