@@ -15,18 +15,20 @@ variable "client_id" {
 }
 
 variable "client_secret" {
-  nullable = true
+  nullable = false
   sensitive = true
   description = "Client Secret for the deployment Service Principal"
 }
 
 variable "s3_sandbox_base_path" {
+  nullable = false
   type        = string
   description = "Base path for the sandbox external locations."
   default     = "s3://<my-bucket>/sandboxes/"
 }
 
 variable "storage_credential_id" {
+  nullable = false
   description = "Storage Credential ID to be used for the sandbox external location."
   type        = string
 }

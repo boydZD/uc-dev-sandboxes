@@ -27,7 +27,6 @@ resource "databricks_catalog" "sandbox_catalog" {
 resource "databricks_workspace_binding" "sandbox" {
   securable_name = databricks_catalog.sandbox_catalog.name
   workspace_id   = var.workspace_id
-  #depends_on = [databricks_grant.sandbox_catalog]
 }
 
 # Grant Admin Catalog Perms
