@@ -25,19 +25,3 @@ tenant_map = {
     catalog_admin = "another-group"
   },
 }
-
-# ============================================================================
-# Configuration for user_schemas module (managed user sandboxes)
-# ============================================================================
-
-# User Catalog Name
-user_catalog_name = "user_sandboxes"
-
-# Users CSV Path
-users_csv_path = "./users.csv"
-
-# Storage Configuration for user catalog
-user_s3_base_path = "s3://<my-bucket>/user-sandboxes/"
-
-# External Location Name - The external location that covers the S3 base path
-external_location_name = "your-external-location-name"
