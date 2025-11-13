@@ -7,21 +7,17 @@ client_id     = "your-service-principal-client-id"
 client_secret = "your-service-principal-client-secret"
 
 # ============================================================================
-# Configuration for sandbox_catalog module (original tenant-based sandboxes)
+# Configuration for user_schemas module (managed user sandboxes)
 # ============================================================================
 
-# Storage Configuration for tenant catalogs
-s3_sandbox_base_path = "s3://<my-bucket>/sandboxes/"
+# User Catalog Name
+user_catalog_name = "user_sandboxes"
 
-# Storage Credential ID
-storage_credential_id = "your-storage-credential-name"
+# Users CSV Path
+users_csv_path = "./users.csv"
 
-# Tenant Map - Define your tenants and their admins
-tenant_map = {
-  "demo-tenant1" = {
-    catalog_admin = "some-group"
-  },
-  "demo-tenant2" = {
-    catalog_admin = "another-group"
-  },
-}
+# Storage Configuration for user catalog
+user_s3_base_path = "s3://<my-bucket>/user-sandboxes/"
+
+# External Location Name - The external location that covers the S3 base path
+external_location_name = "your-external-location-name"
