@@ -1,6 +1,6 @@
 module "sandbox_catalog" {
   for_each = var.tenant_map
-  source = "./modules/sandbox_catalog"
+  source = "../../modules/sandbox_catalog"
   tenant_name = each.key
   catalog_admin = each.value.catalog_admin
   workspace_id = var.workspace_id
